@@ -139,8 +139,8 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/VerifyEmail.tsx"
   },
-  "resources/js/Pages/Dashboard.tsx": {
-    "file": "assets/Dashboard.js",
+  "resources/js/Pages/Home.tsx": {
+    "file": "assets/Home.js",
     "imports": [
       "resources/js/app.tsx",
       "_AuthenticatedLayout.js",
@@ -151,7 +151,7 @@
       "_PrimaryButton.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Dashboard.tsx"
+    "src": "resources/js/Pages/Home.tsx"
   },
   "resources/js/Pages/Profile/Edit.tsx": {
     "file": "assets/Edit.js",
@@ -226,8 +226,8 @@
       "resources/js/app.tsx",
       "_ThoughtCard.js",
       "_AuthenticatedLayout.js",
-      "_InputError.js",
       "_PrimaryButton.js",
+      "_InputError.js",
       "_ApplicationLogo.js",
       "_transition.js"
     ],
@@ -257,7 +257,7 @@
       "resources/js/Pages/Auth/Register.tsx",
       "resources/js/Pages/Auth/ResetPassword.tsx",
       "resources/js/Pages/Auth/VerifyEmail.tsx",
-      "resources/js/Pages/Dashboard.tsx",
+      "resources/js/Pages/Home.tsx",
       "resources/js/Pages/Profile/Edit.tsx",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
