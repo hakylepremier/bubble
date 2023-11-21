@@ -20,6 +20,12 @@
       "_ApplicationLogo.js"
     ]
   },
+  "_InputError.js": {
+    "file": "assets/InputError.js",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
   "_InputLabel.js": {
     "file": "assets/InputLabel.js",
     "imports": [
@@ -38,6 +44,15 @@
       "resources/js/app.tsx"
     ]
   },
+  "_ThoughtCard.js": {
+    "file": "assets/ThoughtCard.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout.js",
+      "_InputError.js",
+      "_PrimaryButton.js"
+    ]
+  },
   "_transition.js": {
     "file": "assets/transition.js",
     "imports": [
@@ -49,9 +64,10 @@
     "imports": [
       "resources/js/app.tsx",
       "_GuestLayout.js",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_ApplicationLogo.js"
     ],
     "isDynamicEntry": true,
@@ -62,8 +78,9 @@
     "imports": [
       "resources/js/app.tsx",
       "_GuestLayout.js",
-      "_TextInput.js",
+      "_InputError.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_ApplicationLogo.js"
     ],
     "isDynamicEntry": true,
@@ -74,9 +91,10 @@
     "imports": [
       "resources/js/app.tsx",
       "_GuestLayout.js",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_ApplicationLogo.js"
     ],
     "isDynamicEntry": true,
@@ -87,9 +105,10 @@
     "imports": [
       "resources/js/app.tsx",
       "_GuestLayout.js",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_ApplicationLogo.js"
     ],
     "isDynamicEntry": true,
@@ -100,9 +119,10 @@
     "imports": [
       "resources/js/app.tsx",
       "_GuestLayout.js",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_ApplicationLogo.js"
     ],
     "isDynamicEntry": true,
@@ -124,8 +144,11 @@
     "imports": [
       "resources/js/app.tsx",
       "_AuthenticatedLayout.js",
+      "_ThoughtCard.js",
       "_ApplicationLogo.js",
-      "_transition.js"
+      "_transition.js",
+      "_InputError.js",
+      "_PrimaryButton.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Dashboard.tsx"
@@ -140,8 +163,9 @@
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
       "_ApplicationLogo.js",
       "_transition.js",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
+      "_TextInput.js",
       "_PrimaryButton.js"
     ],
     "isDynamicEntry": true,
@@ -151,9 +175,10 @@
     "file": "assets/DeleteUserForm.js",
     "imports": [
       "resources/js/app.tsx",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
-      "_transition.js"
+      "_transition.js",
+      "_TextInput.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx"
@@ -162,9 +187,10 @@
     "file": "assets/UpdatePasswordForm.js",
     "imports": [
       "resources/js/app.tsx",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_transition.js"
     ],
     "isDynamicEntry": true,
@@ -174,13 +200,39 @@
     "file": "assets/UpdateProfileInformationForm.js",
     "imports": [
       "resources/js/app.tsx",
-      "_TextInput.js",
+      "_InputError.js",
       "_InputLabel.js",
       "_PrimaryButton.js",
+      "_TextInput.js",
       "_transition.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
+  },
+  "resources/js/Pages/TestPage.tsx": {
+    "file": "assets/TestPage.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout.js",
+      "_ApplicationLogo.js",
+      "_transition.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/TestPage.tsx"
+  },
+  "resources/js/Pages/ThoughtPage.tsx": {
+    "file": "assets/ThoughtPage.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_ThoughtCard.js",
+      "_AuthenticatedLayout.js",
+      "_InputError.js",
+      "_PrimaryButton.js",
+      "_ApplicationLogo.js",
+      "_transition.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/ThoughtPage.tsx"
   },
   "resources/js/Pages/Welcome.tsx": {
     "file": "assets/Welcome.js",
@@ -210,6 +262,8 @@
       "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "resources/js/Pages/TestPage.tsx",
+      "resources/js/Pages/ThoughtPage.tsx",
       "resources/js/Pages/Welcome.tsx"
     ],
     "file": "assets/app.js",

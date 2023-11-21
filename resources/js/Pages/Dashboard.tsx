@@ -1,20 +1,34 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { Head } from "@inertiajs/react";
+import { PageProps, Thought } from "@/types";
+import ThoughtComponent from "@/Components/ThoughtCard";
+import Test from "@/Components/Test";
 
-export default function Dashboard({ auth }: PageProps) {
+// export default function Dashboard({ auth }: PageProps) {
+export default function Dashboard({
+    auth,
+    thoughts,
+}: PageProps<{ thoughts: Thought[] }>) {
     return (
         <AuthenticatedLayout
             user={auth.user}
-            header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Dashboard</h2>}
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    Home
+                </h2>
+            }
         >
-            <Head title="Dashboard" />
+            <Head title="Home" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
-                    </div>
+            <div className="text-white p-6">
+                <div className="mt-6 shadow-sm rounded-lg divide-y bg-[#164863]">
+                    {thoughts.map((thought) => (
+                        <ThoughtComponent
+                            key={thought.id}
+                            thought={thought}
+                            // auth={auth}
+                        />
+                    ))}
                 </div>
             </div>
         </AuthenticatedLayout>
