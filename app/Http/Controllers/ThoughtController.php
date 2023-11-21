@@ -16,14 +16,9 @@ class ThoughtController extends Controller
      */
     public function index()
     {
-        // $user = auth()->id();
-        // $thoughts1 = User::find(auth()->id())->first()->thoughts->with('user');
-        // $thoughts = Thought::where('user_id', '=', auth()->id())->with('user')->get();
-        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user')->get();
+        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user')->latest()->get();
         return
             Inertia::render('ThoughtPage', [
-                // 'thoughts1' => Thought::where('user_id', '=', auth()->id())->with('user')->get(),
-                // 'thoughts' => Thought::with('user')->latest()->get(),
                 'thoughts' => $thoughts,
             ]);
     }
@@ -41,7 +36,13 @@ class ThoughtController extends Controller
      */
     public function store(StoreThoughtRequest $request)
     {
-        //
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        $request->user()->thoughts()->create($validated);
+
+        return redirect(route('thoughts.index'));
     }
 
     /**
@@ -65,7 +66,6 @@ class ThoughtController extends Controller
      */
     public function update(UpdateThoughtRequest $request, Thought $thought)
     {
-        //
     }
 
     /**

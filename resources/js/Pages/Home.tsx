@@ -5,7 +5,7 @@ import ThoughtComponent from "@/Components/ThoughtCard";
 import Test from "@/Components/Test";
 
 // export default function Dashboard({ auth }: PageProps) {
-export default function Dashboard({
+export default function Home({
     auth,
     thoughts,
 }: PageProps<{ thoughts: Thought[] }>) {

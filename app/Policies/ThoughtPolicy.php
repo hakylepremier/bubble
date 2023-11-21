@@ -13,7 +13,7 @@ class ThoughtPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->is(auth()->user());
     }
 
     /**
@@ -21,7 +21,7 @@ class ThoughtPolicy
      */
     public function view(User $user, Thought $thought): bool
     {
-        //
+        return $user->is(auth()->user());
     }
 
     /**
@@ -29,7 +29,7 @@ class ThoughtPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->is(auth()->user());
     }
 
     /**

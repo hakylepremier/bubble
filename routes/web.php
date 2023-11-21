@@ -39,7 +39,7 @@ Route::resource('thoughts', ThoughtController::class)
 
 Route::get('/home', function () {
     $thoughts = Thought::where('user_id', '!=', auth()->id())->with('user')->get();
-    return Inertia::render('Dashboard', [
+    return Inertia::render('Home', [
         'thoughts' => $thoughts,
     ]);
 })->middleware(['auth', 'verified'])->name('home');
