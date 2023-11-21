@@ -66,6 +66,15 @@ class ThoughtController extends Controller
      */
     public function update(UpdateThoughtRequest $request, Thought $thought)
     {
+        $this->authorize('update', $thought);
+
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        $thought->update($validated);
+
+        return redirect(route('thoughts.index'));
     }
 
     /**

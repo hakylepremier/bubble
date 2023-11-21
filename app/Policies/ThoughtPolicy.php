@@ -37,7 +37,7 @@ class ThoughtPolicy
      */
     public function update(User $user, Thought $thought): bool
     {
-        //
+        return $thought->user()->is($user);
     }
 
     /**
@@ -45,7 +45,7 @@ class ThoughtPolicy
      */
     public function delete(User $user, Thought $thought): bool
     {
-        //
+        return $this->update($user, $thought);
     }
 
     /**
@@ -53,7 +53,7 @@ class ThoughtPolicy
      */
     public function restore(User $user, Thought $thought): bool
     {
-        //
+        return $this->update($user, $thought);
     }
 
     /**
@@ -61,6 +61,6 @@ class ThoughtPolicy
      */
     public function forceDelete(User $user, Thought $thought): bool
     {
-        //
+        return $this->update($user, $thought);
     }
 }

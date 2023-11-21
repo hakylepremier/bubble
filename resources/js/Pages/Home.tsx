@@ -20,7 +20,7 @@ export default function Home({
         >
             <Head title="Home" />
 
-            <div className="text-white p-6">
+            <div className="text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mt-6 shadow-sm rounded-lg divide-y bg-[#164863]">
                     {thoughts.map((thought) => (
                         <ThoughtComponent
