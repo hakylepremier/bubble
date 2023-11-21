@@ -82,6 +82,10 @@ class ThoughtController extends Controller
      */
     public function destroy(Thought $thought)
     {
-        //
+        $this->authorize('delete', $thought);
+
+        $thought->delete();
+
+        return redirect(route('thoughts.index'));
     }
 }
