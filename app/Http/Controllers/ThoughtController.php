@@ -17,11 +17,11 @@ class ThoughtController extends Controller
     public function index()
     {
         $thoughts = Thought::where('user_id', '=', auth()->id())->with('user', 'likes')->latest()->get();
-        foreach ($thoughts as $thought) {
-            $like = $thought->likes();
-        }
+        // foreach ($thoughts as $thought) {
+        //     $like = $thought->likes();
+        // }
         return
-            Inertia::render('ThoughtPage', [
+            Inertia::render('Thoughts/Index', [
                 'thoughts' => $thoughts,
             ]);
     }
@@ -53,7 +53,11 @@ class ThoughtController extends Controller
      */
     public function show(Thought $thought)
     {
-        //
+        $thought->load('user', 'likes', 'insights', 'insights.user');
+        return
+            Inertia::render('Thoughts/ThoughtPage', [
+                'thought' => $thought,
+            ]);
     }
 
     /**

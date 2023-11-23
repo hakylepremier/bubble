@@ -11,6 +11,16 @@ export interface Like {
     user_id: number;
 }
 
+export interface Insight {
+    id: number;
+    message: string;
+    thought_id: number;
+    user_id: number;
+    user: User;
+    created_at: Date;
+    updated_at: Date;
+}
+
 export interface Thought {
     id: number;
     message: string;
@@ -18,6 +28,10 @@ export interface Thought {
     updated_at: Date;
     user: User;
     likes: Like[];
+}
+
+export interface ThoughtInsight extends Thought {
+    insights: Insight[];
 }
 
 export type PageProps<

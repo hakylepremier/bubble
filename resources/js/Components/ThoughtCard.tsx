@@ -6,6 +6,8 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Link, useForm, usePage } from "@inertiajs/react";
 import { PageProps, Thought } from "@/types";
+import LikeButton from "./LikeButton";
+import CommentButton from "./CommentButton";
 
 dayjs.extend(relativeTime);
 
@@ -36,7 +38,7 @@ export default function ThoughtCard({
     return (
         // border-color: rgb(57 64 86 / var(--tw-border-opacity));
         //     background: #252A37; dark:border-gray-700
-        <div className="p-6 flex space-x-2 text-white dark:border-[#427D9D]">
+        <div className="p-6 flex space-x-2 text-white dark:border-gray-700">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-[#9BBEC8] -scale-x-100"
@@ -98,35 +100,50 @@ export default function ThoughtCard({
                         </Dropdown>
                     )}
                 </div>
-                {editing ? (
-                    <form onSubmit={submit}>
-                        <textarea
-                            value={data.message}
-                            onChange={(e) => setData("message", e.target.value)}
-                            className="mt-4 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm dark:bg-gray-800 text-white dark:border-gray-700"
-                        ></textarea>
-                        <InputError message={errors.message} className="mt-2" />
-                        <div className="space-x-2">
-                            <PrimaryButton className="mt-4">Save</PrimaryButton>
-                            <button
-                                className="mt-4"
-                                onClick={() => {
-                                    setEditing(false);
-                                    reset();
-                                    clearErrors();
-                                }}
-                            >
-                                Cancel
-                            </button>
-                        </div>
-                    </form>
-                ) : (
-                    <p className="mt-4 text-lg text-[#DDF2FD]">
-                        {thought.message}
-                    </p>
+                <Link href={route("thoughts.show", thought.id)}>
+                    {editing ? (
+                        <form onSubmit={submit}>
+                            <textarea
+                                value={data.message}
+                                onChange={(e) =>
+                                    setData("message", e.target.value)
+                                }
+                                className="mt-4 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm dark:bg-gray-800 text-white dark:border-gray-700"
+                            ></textarea>
+                            <InputError
+                                message={errors.message}
+                                className="mt-2"
+                            />
+                            <div className="space-x-2">
+                                <PrimaryButton className="mt-4">
+                                    Save
+                                </PrimaryButton>
+                                <button
+                                    className="mt-4"
+                                    onClick={() => {
+                                        setEditing(false);
+                                        reset();
+                                        clearErrors();
+                                    }}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    ) : (
+                        <p className="mt-4 text-lg text-[#DDF2FD]">
+                            {thought.message}
+                        </p>
+                    )}
+                </Link>
+                {thought.user.id !== auth.user.id && (
+                    <div className="flex gap-2 pt-2">
+                        <LikeButton thought={thought} />
+                        <CommentButton />
+                    </div>
                 )}
                 {/* Post::with(['likes' => function() use ($user_id) { $q->where('user_id','=', $user_id); }])->all(); */}
-                <div className="text-blue-800">
+                {/* <div className="text-blue-800">
                     {thought.likes[0] ? (
                         <Link
                             as="button"
@@ -184,7 +201,7 @@ export default function ThoughtCard({
                             </svg>
                         </Link>
                     )}
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { PageProps, Thought } from "@/types";
 import ThoughtComponent from "@/Components/ThoughtCard";
 import Test from "@/Components/Test";
+import { Link } from "@inertiajs/react";
 
 // export default function Dashboard({ auth }: PageProps) {
 export default function Home({
@@ -21,11 +22,15 @@ export default function Home({
             <div className="text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mt-6 shadow-sm rounded-lg divide-y bg-[#164863]">
                     {thoughts.map((thought) => (
-                        <ThoughtComponent
+                        <div
+                            className="hover:bg-slate-700 hover:rounded-lg"
                             key={thought.id}
-                            thought={thought}
-                            // auth={auth}
-                        />
+                        >
+                            <ThoughtComponent
+                                thought={thought}
+                                // auth={auth}
+                            />
+                        </div>
                     ))}
                 </div>
             </div>

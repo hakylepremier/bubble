@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InsightController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThoughtController;
@@ -31,7 +32,11 @@ Route::get('/', function () {
 });
 
 Route::resource('thoughts', ThoughtController::class)
-    ->only(['index', 'store', 'update', 'destroy'])
+    ->only(['index', 'show', 'store', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('insights', InsightController::class)
+    ->only(['index', 'show', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 Route::resource('likes', LikeController::class)

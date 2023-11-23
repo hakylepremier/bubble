@@ -18,9 +18,15 @@ class LikeController extends Controller
     public function index()
     {
         // TODO: Sort by like created_at date
+        // TODO: Add the like count 
         $thoughts = Thought::whereHas('likes', function (Builder $query) {
             $query->where('user_id', '=', auth()->id());
         })->with('user', 'likes')->get();
+
+        // possible upgrade to above
+        // $posts = Post::whereRelation(
+        //     'comments', 'created_at', '>=', now()->subHour()
+        // )->get();
 
         foreach ($thoughts as $thought) {
             $like = $thought->likes();
@@ -51,7 +57,7 @@ class LikeController extends Controller
 
         $request->user()->liked()->create($validated);
 
-        return redirect(route('home'));
+        return back();
     }
 
     /**
@@ -88,6 +94,6 @@ class LikeController extends Controller
 
         $like->delete();
 
-        return redirect(route('likes.index'));
+        return back();
     }
 }

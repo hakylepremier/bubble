@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Thought extends Model
+class Insight extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'message',
+        'thought_id'
     ];
 
     public function user(): BelongsTo
@@ -20,13 +20,8 @@ class Thought extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function likes(): HasMany
+    public function thought(): BelongsTo
     {
-        return $this->hasMany(Like::class);
-    }
-
-    public function insights(): HasMany
-    {
-        return $this->hasMany(Insight::class);
+        return $this->belongsTo(Thought::class);
     }
 }
