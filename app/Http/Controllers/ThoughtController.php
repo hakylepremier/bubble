@@ -16,7 +16,10 @@ class ThoughtController extends Controller
      */
     public function index()
     {
-        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user')->latest()->get();
+        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user', 'likes')->latest()->get();
+        foreach ($thoughts as $thought) {
+            $like = $thought->likes();
+        }
         return
             Inertia::render('ThoughtPage', [
                 'thoughts' => $thoughts,

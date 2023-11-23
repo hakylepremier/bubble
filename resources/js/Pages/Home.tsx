@@ -1,5 +1,4 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/react";
 import { PageProps, Thought } from "@/types";
 import ThoughtComponent from "@/Components/ThoughtCard";
 import Test from "@/Components/Test";
@@ -17,9 +16,8 @@ export default function Home({
                     Home
                 </h2>
             }
+            title="Home"
         >
-            <Head title="Home" />
-
             <div className="text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mt-6 shadow-sm rounded-lg divide-y bg-[#164863]">
                     {thoughts.map((thought) => (

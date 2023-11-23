@@ -3,14 +3,15 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { User } from "@/types";
 
 export default function Authenticated({
     user,
     header,
     children,
-}: PropsWithChildren<{ user: User; header?: ReactNode }>) {
+    title,
+}: PropsWithChildren<{ user: User; header?: ReactNode; title: string }>) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
@@ -41,6 +42,8 @@ export default function Authenticated({
                                 </NavLink>
                             </div>
                         </div>
+
+                        <Head title={title} />
 
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
                             <div className="ms-3 relative">

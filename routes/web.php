@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThoughtController;
+use App\Models\Like;
 use App\Models\Thought;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -37,8 +40,18 @@ Route::resource('thoughts', ThoughtController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
+Route::resource('likes', LikeController::class)
+    ->only(['index', 'store', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
 Route::get('/home', function () {
-    $thoughts = Thought::where('user_id', '!=', auth()->id())->with('user')->latest()->get();
+    $user_id = auth()->id();
+    $thoughts = Thought::where('user_id', '!=', auth()->id())->with(['user', 'likes' => function (Builder $q) {
+        $q->where('user_id', '=', auth()->id());
+    }])->latest()->get();
+    foreach ($thoughts as $thought) {
+        $like = $thought->likes();
+    }
     return Inertia::render('Home', [
         'thoughts' => $thoughts,
     ]);
