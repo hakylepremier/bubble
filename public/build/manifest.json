@@ -153,6 +153,20 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Home.tsx"
   },
+  "resources/js/Pages/LikePage.tsx": {
+    "file": "assets/LikePage.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_ThoughtCard.js",
+      "_AuthenticatedLayout.js",
+      "_InputError.js",
+      "_PrimaryButton.js",
+      "_ApplicationLogo.js",
+      "_transition.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/LikePage.tsx"
+  },
   "resources/js/Pages/Profile/Edit.tsx": {
     "file": "assets/Edit.js",
     "imports": [
@@ -209,17 +223,6 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
   },
-  "resources/js/Pages/TestPage.tsx": {
-    "file": "assets/TestPage.js",
-    "imports": [
-      "resources/js/app.tsx",
-      "_AuthenticatedLayout.js",
-      "_ApplicationLogo.js",
-      "_transition.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "resources/js/Pages/TestPage.tsx"
-  },
   "resources/js/Pages/ThoughtPage.tsx": {
     "file": "assets/ThoughtPage.js",
     "imports": [
@@ -258,11 +261,11 @@
       "resources/js/Pages/Auth/ResetPassword.tsx",
       "resources/js/Pages/Auth/VerifyEmail.tsx",
       "resources/js/Pages/Home.tsx",
+      "resources/js/Pages/LikePage.tsx",
       "resources/js/Pages/Profile/Edit.tsx",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
-      "resources/js/Pages/TestPage.tsx",
       "resources/js/Pages/ThoughtPage.tsx",
       "resources/js/Pages/Welcome.tsx"
     ],

@@ -30,12 +30,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('test', function () {
-    return Inertia::render('TestPage', [
-        'thought' => Thought::find(1)
-    ]);
-});
-
 Route::resource('thoughts', ThoughtController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
