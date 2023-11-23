@@ -223,8 +223,8 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
   },
-  "resources/js/Pages/ThoughtPage.tsx": {
-    "file": "assets/ThoughtPage.js",
+  "resources/js/Pages/Thoughts/Index.tsx": {
+    "file": "assets/Index.js",
     "imports": [
       "resources/js/app.tsx",
       "_ThoughtCard.js",
@@ -235,7 +235,21 @@
       "_transition.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/ThoughtPage.tsx"
+    "src": "resources/js/Pages/Thoughts/Index.tsx"
+  },
+  "resources/js/Pages/Thoughts/ThoughtPage.tsx": {
+    "file": "assets/ThoughtPage.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError.js",
+      "_AuthenticatedLayout.js",
+      "_ThoughtCard.js",
+      "_PrimaryButton.js",
+      "_ApplicationLogo.js",
+      "_transition.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Thoughts/ThoughtPage.tsx"
   },
   "resources/js/Pages/Welcome.tsx": {
     "file": "assets/Welcome.js",
@@ -266,7 +280,8 @@
       "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
-      "resources/js/Pages/ThoughtPage.tsx",
+      "resources/js/Pages/Thoughts/Index.tsx",
+      "resources/js/Pages/Thoughts/ThoughtPage.tsx",
       "resources/js/Pages/Welcome.tsx"
     ],
     "file": "assets/app.js",
