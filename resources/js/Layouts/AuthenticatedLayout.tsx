@@ -40,6 +40,12 @@ export default function Authenticated({
                                 >
                                     Thoughts
                                 </NavLink>
+                                <NavLink
+                                    href={route("likes.index")}
+                                    active={route().current("likes.index")}
+                                >
+                                    Likes
+                                </NavLink>
                             </div>
                         </div>
 
@@ -151,6 +157,12 @@ export default function Authenticated({
                             active={route().current("thoughts.index")}
                         >
                             Thoughts
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route("likes.index")}
+                            active={route().current("likes.index")}
+                        >
+                            Likes
                         </ResponsiveNavLink>
                     </div>
 
