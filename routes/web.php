@@ -4,6 +4,7 @@ use App\Http\Controllers\InsightController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThoughtController;
+use App\Http\Controllers\UserController;
 use App\Models\Like;
 use App\Models\Thought;
 use Illuminate\Contracts\Database\Eloquent\Builder;
@@ -56,10 +57,22 @@ Route::get('/home', function () {
     ]);
 })->middleware(['auth', 'verified'])->name('home');
 
+
+Route::get('/profile/followers', [UserController::class, 'followers'])
+    ->name('profile.followers')
+    ->middleware(['auth', 'verified']);
+Route::get('/profile/following', [UserController::class, 'following'])
+    ->name('profile.following')
+    ->middleware(['auth', 'verified']);
+Route::post('/profile/following', [UserController::class, 'store_following'])
+    ->name('profile.following.store')
+    ->middleware(['auth', 'verified']);
+Route::singleton('profile', UserController::class)->only(['show', 'update'])->middleware(['auth', 'verified']);
+
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/settings', [ProfileController::class, 'edit'])->name('settings.edit');
+    Route::patch('/settings', [ProfileController::class, 'update'])->name('settings.update');
+    Route::delete('/settings', [ProfileController::class, 'destroy'])->name('settings.destroy');
 });
 
 require __DIR__ . '/auth.php';

@@ -25,7 +25,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the user's profile information.
+     * Update the user's settings.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -37,7 +37,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit');
+        return Redirect::route('settings.edit');
     }
 
     /**
