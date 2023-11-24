@@ -7,10 +7,7 @@ import { PageProps, Thought, ThoughtInsight } from "@/types";
 import { useForm } from "@inertiajs/react";
 import React from "react";
 
-const ThoughtPage = ({
-    auth,
-    thought,
-}: PageProps<{ thought: ThoughtInsight }>) => {
+const ThoughtPage = ({ thought }: PageProps<{ thought: ThoughtInsight }>) => {
     const { data, setData, post, processing, reset, errors } = useForm({
         message: "",
         thought_id: thought.id,
@@ -22,7 +19,6 @@ const ThoughtPage = ({
     };
     return (
         <Authenticated
-            user={auth.user}
             // header={
             //     <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             //         My Shower Thoughts

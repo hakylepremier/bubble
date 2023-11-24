@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Thought;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
@@ -17,17 +20,23 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function followers(string $id)
+    public function followers(User $user)
     {
-        //
+        return
+            Inertia::render('Profile/Followers', [
+                'user' => $user,
+            ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function following(string $id)
+    public function following(User $user)
     {
-        //
+        return
+            Inertia::render('Profile/Following', [
+                'user' => $user,
+            ]);
     }
 
     /**
@@ -57,9 +66,13 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
-        //
+        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user', 'likes')->latest()->get();
+        return
+            Inertia::render('Profile/Index', [
+                'thoughts' => $thoughts,
+            ]);
     }
 
     /**

@@ -6,7 +6,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import InputError from "@/Components/InputError";
 import { Link, useForm } from "@inertiajs/react";
 
-const Index = ({ auth, thoughts }: PageProps<{ thoughts: Thought[] }>) => {
+const Index = ({ thoughts }: PageProps<{ thoughts: Thought[] }>) => {
     const { data, setData, post, processing, reset, errors } = useForm({
         message: "",
     });
@@ -17,7 +17,6 @@ const Index = ({ auth, thoughts }: PageProps<{ thoughts: Thought[] }>) => {
     };
     return (
         <Authenticated
-            user={auth.user}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                     My Shower Thoughts

@@ -3,18 +3,18 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Head, Link } from "@inertiajs/react";
-import { User } from "@/types";
+import { Head, Link, usePage } from "@inertiajs/react";
+import { PageProps, User } from "@/types";
 
 export default function Authenticated({
-    user,
     header,
     children,
     title,
-}: PropsWithChildren<{ user: User; header?: ReactNode; title: string }>) {
+}: PropsWithChildren<{ header?: ReactNode; title: string }>) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
-
+    const { auth } = usePage().props as unknown as PageProps;
+    const user = auth.user;
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
             <nav className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
@@ -45,6 +45,12 @@ export default function Authenticated({
                                     active={route().current("likes.index")}
                                 >
                                     Likes
+                                </NavLink>
+                                <NavLink
+                                    href={route("profile.show")}
+                                    active={route().current("profile.show")}
+                                >
+                                    Profile
                                 </NavLink>
                             </div>
                         </div>
@@ -163,6 +169,12 @@ export default function Authenticated({
                             active={route().current("likes.index")}
                         >
                             Likes
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route("profile.show")}
+                            active={route().current("profile.show")}
+                        >
+                            Profile
                         </ResponsiveNavLink>
                     </div>
 
