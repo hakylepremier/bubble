@@ -11,8 +11,7 @@ import NavLink from "@/Components/NavLink";
 
 const ProfileLayout = ({
     children,
-    test,
-}: PageProps<{ children: ReactNode; test: String | undefined }>) => {
+}: PropsWithChildren<{ children: ReactNode }>) => {
     const { auth } = usePage().props as unknown as PageProps;
     const { data, setData, post, processing, reset, errors } = useForm({
         message: "",
@@ -23,8 +22,7 @@ const ProfileLayout = ({
                 <ProfileLogo />
             </div>
             <p className="text-white">{auth.user.name}</p>
-            <p className="text-white">Joined {auth.user.email_verified_at}</p>
-            <p className="text-white">{test}</p>
+            <p className="text-white">Joined </p>
             <div className="flex gap-4">
                 <Link href={route("profile.following")} className="text-white">
                     Following

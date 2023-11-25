@@ -10,7 +10,8 @@
     "imports": [
       "resources/js/app.tsx",
       "_ApplicationLogo.js",
-      "_transition.js"
+      "_transition.js",
+      "_NavLink.js"
     ]
   },
   "_GuestLayout.js": {
@@ -28,6 +29,12 @@
   },
   "_InputLabel.js": {
     "file": "assets/InputLabel.js",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_NavLink.js": {
+    "file": "assets/NavLink.js",
     "imports": [
       "resources/js/app.tsx"
     ]
@@ -147,6 +154,7 @@
       "_ThoughtCard.js",
       "_ApplicationLogo.js",
       "_transition.js",
+      "_NavLink.js",
       "_InputError.js",
       "_PrimaryButton.js"
     ],
@@ -162,30 +170,92 @@
       "_InputError.js",
       "_PrimaryButton.js",
       "_ApplicationLogo.js",
-      "_transition.js"
+      "_transition.js",
+      "_NavLink.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/LikePage.tsx"
   },
-  "resources/js/Pages/Profile/Edit.tsx": {
+  "resources/js/Pages/Profile/Followers.tsx": {
+    "file": "assets/Followers.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
+      "_AuthenticatedLayout.js",
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "_NavLink.js",
+      "_ApplicationLogo.js",
+      "_transition.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Followers.tsx"
+  },
+  "resources/js/Pages/Profile/Following.tsx": {
+    "file": "assets/Following.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
+      "_AuthenticatedLayout.js",
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "_NavLink.js",
+      "_ApplicationLogo.js",
+      "_transition.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Following.tsx"
+  },
+  "resources/js/Pages/Profile/Index.tsx": {
+    "file": "assets/Index.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout.js",
+      "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
+      "_ApplicationLogo.js",
+      "_transition.js",
+      "_NavLink.js",
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Index.tsx"
+  },
+  "resources/js/Pages/Profile/Partials/ProfileLogo.tsx": {
+    "file": "assets/ProfileLogo.js",
+    "imports": [
+      "resources/js/app.tsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Partials/ProfileLogo.tsx"
+  },
+  "resources/js/Pages/Profile/layout/ProfileLayout.tsx": {
+    "file": "assets/ProfileLayout.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "_NavLink.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/layout/ProfileLayout.tsx"
+  },
+  "resources/js/Pages/Settings/Edit.tsx": {
     "file": "assets/Edit.js",
     "imports": [
       "resources/js/app.tsx",
       "_AuthenticatedLayout.js",
-      "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
-      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
-      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "resources/js/Pages/Settings/Partials/DeleteUserForm.tsx",
+      "resources/js/Pages/Settings/Partials/UpdatePasswordForm.tsx",
+      "resources/js/Pages/Settings/Partials/UpdateProfileInformationForm.tsx",
       "_ApplicationLogo.js",
       "_transition.js",
+      "_NavLink.js",
       "_InputError.js",
       "_InputLabel.js",
       "_TextInput.js",
       "_PrimaryButton.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Profile/Edit.tsx"
+    "src": "resources/js/Pages/Settings/Edit.tsx"
   },
-  "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx": {
+  "resources/js/Pages/Settings/Partials/DeleteUserForm.tsx": {
     "file": "assets/DeleteUserForm.js",
     "imports": [
       "resources/js/app.tsx",
@@ -195,9 +265,9 @@
       "_TextInput.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx"
+    "src": "resources/js/Pages/Settings/Partials/DeleteUserForm.tsx"
   },
-  "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx": {
+  "resources/js/Pages/Settings/Partials/UpdatePasswordForm.tsx": {
     "file": "assets/UpdatePasswordForm.js",
     "imports": [
       "resources/js/app.tsx",
@@ -208,9 +278,9 @@
       "_transition.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx"
+    "src": "resources/js/Pages/Settings/Partials/UpdatePasswordForm.tsx"
   },
-  "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx": {
+  "resources/js/Pages/Settings/Partials/UpdateProfileInformationForm.tsx": {
     "file": "assets/UpdateProfileInformationForm.js",
     "imports": [
       "resources/js/app.tsx",
@@ -221,10 +291,10 @@
       "_transition.js"
     ],
     "isDynamicEntry": true,
-    "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
+    "src": "resources/js/Pages/Settings/Partials/UpdateProfileInformationForm.tsx"
   },
   "resources/js/Pages/Thoughts/Index.tsx": {
-    "file": "assets/Index.js",
+    "file": "assets/Index2.js",
     "imports": [
       "resources/js/app.tsx",
       "_ThoughtCard.js",
@@ -232,7 +302,8 @@
       "_PrimaryButton.js",
       "_InputError.js",
       "_ApplicationLogo.js",
-      "_transition.js"
+      "_transition.js",
+      "_NavLink.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Thoughts/Index.tsx"
@@ -246,7 +317,8 @@
       "_ThoughtCard.js",
       "_PrimaryButton.js",
       "_ApplicationLogo.js",
-      "_transition.js"
+      "_transition.js",
+      "_NavLink.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Thoughts/ThoughtPage.tsx"
@@ -276,10 +348,15 @@
       "resources/js/Pages/Auth/VerifyEmail.tsx",
       "resources/js/Pages/Home.tsx",
       "resources/js/Pages/LikePage.tsx",
-      "resources/js/Pages/Profile/Edit.tsx",
-      "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
-      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
-      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "resources/js/Pages/Profile/Followers.tsx",
+      "resources/js/Pages/Profile/Following.tsx",
+      "resources/js/Pages/Profile/Index.tsx",
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
+      "resources/js/Pages/Settings/Edit.tsx",
+      "resources/js/Pages/Settings/Partials/DeleteUserForm.tsx",
+      "resources/js/Pages/Settings/Partials/UpdatePasswordForm.tsx",
+      "resources/js/Pages/Settings/Partials/UpdateProfileInformationForm.tsx",
       "resources/js/Pages/Thoughts/Index.tsx",
       "resources/js/Pages/Thoughts/ThoughtPage.tsx",
       "resources/js/Pages/Welcome.tsx"

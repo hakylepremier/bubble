@@ -6,6 +6,7 @@ use App\Http\Requests\StoreThoughtRequest;
 use App\Http\Requests\UpdateThoughtRequest;
 use App\Models\Thought;
 use App\Models\User;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
@@ -53,7 +54,9 @@ class ThoughtController extends Controller
      */
     public function show(Thought $thought)
     {
-        $thought->load('user', 'likes', 'insights', 'insights.user');
+        $thought->load(['user', 'likes', 'insights', 'insights.user', 'user.followers' => function (Builder $q) {
+            $q->where('follower_user_id', '=', auth()->id());
+        }]);
         return
             Inertia::render('Thoughts/ThoughtPage', [
                 'thought' => $thought,
