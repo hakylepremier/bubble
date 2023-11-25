@@ -9,7 +9,10 @@ import { Link, useForm, usePage } from "@inertiajs/react";
 import ProfileLogo from "../Partials/ProfileLogo";
 import NavLink from "@/Components/NavLink";
 
-const ProfileLayout = ({ children }: PageProps<{ children: ReactNode }>) => {
+const ProfileLayout = ({
+    children,
+    test,
+}: PageProps<{ children: ReactNode; test: String | undefined }>) => {
     const { auth } = usePage().props as unknown as PageProps;
     const { data, setData, post, processing, reset, errors } = useForm({
         message: "",
@@ -21,6 +24,7 @@ const ProfileLayout = ({ children }: PageProps<{ children: ReactNode }>) => {
             </div>
             <p className="text-white">{auth.user.name}</p>
             <p className="text-white">Joined {auth.user.email_verified_at}</p>
+            <p className="text-white">{test}</p>
             <div className="flex gap-4">
                 <Link href={route("profile.following")} className="text-white">
                     Following

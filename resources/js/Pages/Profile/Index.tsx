@@ -36,6 +36,6 @@ Index.layout = (page: ReactNode) => (
         }
         title="Profile"
     >
-        <ProfileLayout children={page} />
+        <ProfileLayout children={page} test={"nooooo"} />
     </Authenticated>
 );

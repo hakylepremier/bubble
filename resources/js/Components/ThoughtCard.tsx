@@ -68,7 +68,7 @@ export default function ThoughtCard({
                             </small>
                         )}
                     </div>
-                    {thought.user.id === auth.user.id && (
+                    {thought.user.id === auth.user.id ? (
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <button>
@@ -98,6 +98,26 @@ export default function ThoughtCard({
                                 </Dropdown.Link>
                             </Dropdown.Content>
                         </Dropdown>
+                    ) : (
+                        <div>
+                            <Link
+                                href={route("profile.following.store")}
+                                method="post"
+                                data={{
+                                    followed_user_id: thought.user.id,
+                                    follower_user_id: auth.user.id,
+                                }}
+                                as="button"
+                                preserveScroll
+                                type="button"
+                            >
+                                {thought.user.followers.length === 0 ? (
+                                    <p className="text-bold">Follow</p>
+                                ) : (
+                                    <p className="text-gray-400  ">Following</p>
+                                )}
+                            </Link>
+                        </div>
                     )}
                 </div>
                 <Link href={route("thoughts.show", thought.id)}>

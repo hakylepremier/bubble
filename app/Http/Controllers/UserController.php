@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follow;
 use App\Models\Thought;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -20,8 +22,9 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function followers(User $user)
+    public function followers(User $user, Request $request)
     {
+
         return
             Inertia::render('Profile/Followers', [
                 'user' => $user,
@@ -42,9 +45,35 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function store_following(string $id)
+    public function store_following(User $user, Request $request)
     {
-        //
+        $follower = $request->follower_user_id;
+        $followed = $request->followed_user_id;
+
+
+        // if the follower id is auth id the authorization is checked
+        Gate::authorize('follow', $follower);
+
+        // $follow = Follow::where([['follower_user_id', '=', $follower], ['followed_user_id', '=', $followed]])->first();
+        //!Follow::where([['follower_user_id', '=', $follower], ['followed_user_id', '=', $followed]])->exists()
+        if (!Follow::where([['follower_user_id', '=', $follower], ['followed_user_id', '=', $followed]])->exists()) {
+            // if the follower id is auth id the authorization is checked
+            $test = 1;
+            $validated = $request->validate([
+                'followed_user_id' => 'required|integer',
+                'follower_user_id' => 'required|integer',
+            ]);
+
+            $request->user()->following()->create($validated);
+        } else {
+            // if th
+            $test = 2;
+            // $request->user()->following()->delete($follow);
+            Follow::where([['follower_user_id', '=', $follower], ['followed_user_id', '=', $followed]])->delete();
+            // $follow->delete();
+        }
+
+        return back();
     }
 
     /**

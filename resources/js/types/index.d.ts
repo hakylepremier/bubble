@@ -3,9 +3,15 @@ export interface User {
     name: string;
     email: string;
     email_verified_at: Date;
+    followers: Follow[];
 }
 
 export interface Like {
+    follower_user_id: number;
+    followed_user_id: number;
+}
+
+export interface Follow {
     id: number;
     thought_id: number;
     user_id: number;

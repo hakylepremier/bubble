@@ -48,6 +48,8 @@ Route::get('/home', function () {
     $user_id = auth()->id();
     $thoughts = Thought::where('user_id', '!=', auth()->id())->with(['user', 'likes' => function (Builder $q) {
         $q->where('user_id', '=', auth()->id());
+    }, 'user.followers' => function (Builder $q) {
+        $q->where('follower_user_id', '=', auth()->id());
     }])->latest()->get();
     foreach ($thoughts as $thought) {
         $like = $thought->likes();

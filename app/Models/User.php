@@ -58,4 +58,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Insight::class);
     }
+
+    public function followers(): HasMany
+    {
+        return $this->hasMany(Follow::class, 'followed_user_id', 'id');
+    }
+
+    public function following(): HasMany
+    {
+        return $this->hasMany(Follow::class, 'follower_user_id', 'id');
+    }
 }
