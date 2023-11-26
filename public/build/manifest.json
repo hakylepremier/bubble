@@ -182,8 +182,10 @@
       "resources/js/app.tsx",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
       "_AuthenticatedLayout.js",
+      "resources/js/Pages/Profile/Partials/ThinkerCard.tsx",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
       "_NavLink.js",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx",
       "_ApplicationLogo.js",
       "_transition.js"
     ],
@@ -196,8 +198,10 @@
       "resources/js/app.tsx",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
       "_AuthenticatedLayout.js",
+      "resources/js/Pages/Profile/Partials/ThinkerCard.tsx",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
       "_NavLink.js",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx",
       "_ApplicationLogo.js",
       "_transition.js"
     ],
@@ -208,15 +212,27 @@
     "file": "assets/Index.js",
     "imports": [
       "resources/js/app.tsx",
+      "_ThoughtCard.js",
       "_AuthenticatedLayout.js",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
+      "_InputError.js",
+      "_PrimaryButton.js",
       "_ApplicationLogo.js",
       "_transition.js",
       "_NavLink.js",
-      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx"
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Index.tsx"
+  },
+  "resources/js/Pages/Profile/Partials/FollowButton.tsx": {
+    "file": "assets/FollowButton.js",
+    "imports": [
+      "resources/js/app.tsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Partials/FollowButton.tsx"
   },
   "resources/js/Pages/Profile/Partials/ProfileLogo.tsx": {
     "file": "assets/ProfileLogo.js",
@@ -226,12 +242,23 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/ProfileLogo.tsx"
   },
+  "resources/js/Pages/Profile/Partials/ThinkerCard.tsx": {
+    "file": "assets/ThinkerCard.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Profile/Partials/ThinkerCard.tsx"
+  },
   "resources/js/Pages/Profile/layout/ProfileLayout.tsx": {
     "file": "assets/ProfileLayout.js",
     "imports": [
       "resources/js/app.tsx",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
-      "_NavLink.js"
+      "_NavLink.js",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/layout/ProfileLayout.tsx"
@@ -351,7 +378,9 @@
       "resources/js/Pages/Profile/Followers.tsx",
       "resources/js/Pages/Profile/Following.tsx",
       "resources/js/Pages/Profile/Index.tsx",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
+      "resources/js/Pages/Profile/Partials/ThinkerCard.tsx",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
       "resources/js/Pages/Settings/Edit.tsx",
       "resources/js/Pages/Settings/Partials/DeleteUserForm.tsx",
