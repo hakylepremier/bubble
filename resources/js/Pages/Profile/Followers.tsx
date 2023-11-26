@@ -27,6 +27,8 @@ export default Followers;
 Followers.layout = (page: any) => {
     const { props } = page;
     const user: User = props.user;
+    const follow: Boolean = props.follow;
+    const followed_by: Boolean = props.followed_by;
     // const { user, auth } = usePage().props as unknown as PageProps;
     // const user = props.user;
     return (
@@ -39,7 +41,12 @@ Followers.layout = (page: any) => {
             }
             title="Followers"
         >
-            <ProfileLayout user={user} children={page} />
+            <ProfileLayout
+                follow={follow}
+                followed_by={followed_by}
+                user={user}
+                children={page}
+            />
         </Authenticated>
     );
 };
