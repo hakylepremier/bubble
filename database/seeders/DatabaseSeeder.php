@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         \App\Models\Follow::factory()->create([
-            'follower_user_id' => 3, 'followed_user_id' => 1
+            'follower_user_id' => 1, 'followed_user_id' => 3
         ]);
     }
 }

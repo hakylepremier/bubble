@@ -39,9 +39,9 @@ const Index = ({ thoughts }: PageProps<{ thoughts: Thought[] }>) => {
                 </form>
 
                 <div className="text-white">
-                    <div className="mt-6 shadow-sm rounded-lg divide-y bg-[#164863]">
-                        {thoughts.length !== 0 ? (
-                            thoughts.map((thought) => (
+                    {thoughts.length !== 0 ? (
+                        <div className="mt-6 shadow-sm rounded-lg divide-y bg-[#164863]">
+                            {thoughts.map((thought) => (
                                 <div
                                     className="hover:bg-slate-700"
                                     key={thought.id}
@@ -52,16 +52,16 @@ const Index = ({ thoughts }: PageProps<{ thoughts: Thought[] }>) => {
                                         // auth={auth}
                                     />
                                 </div>
-                            ))
-                        ) : (
-                            <div>
-                                <h3 className="text-xl">
-                                    You have not added any shower thoughts.
-                                </h3>
-                                <p>Let people here what you have to say</p>
-                            </div>
-                        )}
-                    </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className=" text-center pt-6 text-white">
+                            <h3 className="text-xl">
+                                You have not added any shower thoughts.
+                            </h3>
+                            <p>Let people here what you have to say</p>
+                        </div>
+                    )}
                 </div>
             </div>
         </Authenticated>

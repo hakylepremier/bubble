@@ -21,7 +21,9 @@ class LikeController extends Controller
         // TODO: Add the like count 
         $thoughts = Thought::whereHas('likes', function (Builder $query) {
             $query->where('user_id', '=', auth()->id());
-        })->with('user', 'likes')->get();
+        })->with(['user', 'likes', 'user.followers' => function (Builder $q) {
+            $q->where('follower_user_id', '=', auth()->id());
+        }])->get();
 
         // possible upgrade to above
         // $posts = Post::whereRelation(

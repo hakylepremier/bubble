@@ -5,15 +5,17 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Link, useForm, usePage } from "@inertiajs/react";
-import { PageProps, Thought } from "@/types";
+import { PageProps, Thought, User } from "@/types";
 import LikeButton from "./LikeButton";
 import CommentButton from "./CommentButton";
+import NavLink from "./NavLink";
 
 dayjs.extend(relativeTime);
 
 export default function ThoughtCard({
+    showFollow = true,
     thought,
-}: PropsWithChildren<{ thought: Thought }>) {
+}: PropsWithChildren<{ thought: Thought; showFollow?: Boolean }>) {
     const { auth } = usePage().props as unknown as PageProps;
 
     const [editing, setEditing] = useState(false);
@@ -57,7 +59,9 @@ export default function ThoughtCard({
                 <div className="flex justify-between items-center">
                     <div>
                         <span className="text-[#9BBEC8]">
-                            {thought.user.name}
+                            <Link href={route("thinker.show", thought.user.id)}>
+                                {thought.user.name}
+                            </Link>
                         </span>
                         <small className="ml-2 text-sm text-[#427D9D] ">
                             {dayjs(thought.created_at).fromNow()}
@@ -68,55 +72,64 @@ export default function ThoughtCard({
                             </small>
                         )}
                     </div>
-                    {thought.user.id === auth.user.id ? (
-                        <Dropdown>
-                            <Dropdown.Trigger>
-                                <button>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-4 w-4 text-[#9BBEC8]"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                    </svg>
-                                </button>
-                            </Dropdown.Trigger>
-                            <Dropdown.Content>
-                                <button
-                                    className="block w-full px-4 py-2 text-left text-sm leading-5 text-white dark:hover:bg-gray-800  focus:bg-gray-100 transition duration-150 ease-in-out"
-                                    onClick={() => setEditing(true)}
-                                >
-                                    Edit
-                                </button>
-                                <Dropdown.Link
-                                    as="button"
-                                    href={route("thoughts.destroy", thought.id)}
-                                    method="delete"
-                                >
-                                    Delete
-                                </Dropdown.Link>
-                            </Dropdown.Content>
-                        </Dropdown>
-                    ) : (
+                    {showFollow && (
                         <div>
-                            <Link
-                                href={route("profile.following.store")}
-                                method="post"
-                                data={{
-                                    followed_user_id: thought.user.id,
-                                    follower_user_id: auth.user.id,
-                                }}
-                                as="button"
-                                preserveScroll
-                                type="button"
-                            >
-                                {thought.user.followers.length === 0 ? (
-                                    <p className="text-bold">Follow</p>
-                                ) : (
-                                    <p className="text-gray-400  ">Following</p>
-                                )}
-                            </Link>
+                            {thought.user.id === auth.user.id ? (
+                                <Dropdown>
+                                    <Dropdown.Trigger>
+                                        <button>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-4 w-4 text-[#9BBEC8]"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor"
+                                            >
+                                                <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                            </svg>
+                                        </button>
+                                    </Dropdown.Trigger>
+                                    <Dropdown.Content>
+                                        <button
+                                            className="block w-full px-4 py-2 text-left text-sm leading-5 text-white dark:hover:bg-gray-800  focus:bg-gray-100 transition duration-150 ease-in-out"
+                                            onClick={() => setEditing(true)}
+                                        >
+                                            Edit
+                                        </button>
+                                        <Dropdown.Link
+                                            as="button"
+                                            href={route(
+                                                "thoughts.destroy",
+                                                thought.id
+                                            )}
+                                            method="delete"
+                                        >
+                                            Delete
+                                        </Dropdown.Link>
+                                    </Dropdown.Content>
+                                </Dropdown>
+                            ) : (
+                                <div>
+                                    <Link
+                                        href={route("profile.following.store")}
+                                        method="post"
+                                        data={{
+                                            followed_user_id: thought.user.id,
+                                            follower_user_id: auth.user.id,
+                                        }}
+                                        as="button"
+                                        preserveScroll
+                                        type="button"
+                                    >
+                                        {thought.user.followers.length === 0 ? (
+                                            <p className="text-bold">Follow</p>
+                                        ) : (
+                                            <p className="text-gray-400  ">
+                                                Following
+                                            </p>
+                                        )}
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>

@@ -48,7 +48,11 @@ export default function Authenticated({
                                 </NavLink>
                                 <NavLink
                                     href={route("profile.show")}
-                                    active={route().current("profile.show")}
+                                    active={
+                                        route().current("profile.show") ||
+                                        route().current("profile.followers") ||
+                                        route().current("profile.following")
+                                    }
                                 >
                                     Profile
                                 </NavLink>

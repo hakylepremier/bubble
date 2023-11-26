@@ -47,4 +47,9 @@ export type PageProps<
     auth: {
         user: User;
     };
+    user?: User;
 };
+
+export interface MyPage {
+    props: PageProps;
+}

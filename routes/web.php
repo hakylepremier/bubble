@@ -60,16 +60,21 @@ Route::get('/home', function () {
 })->middleware(['auth', 'verified'])->name('home');
 
 
-Route::get('/profile/followers', [UserController::class, 'followers'])
-    ->name('profile.followers')
-    ->middleware(['auth', 'verified']);
-Route::get('/profile/following', [UserController::class, 'following'])
-    ->name('profile.following')
-    ->middleware(['auth', 'verified']);
-Route::post('/profile/following', [UserController::class, 'store_following'])
-    ->name('profile.following.store')
-    ->middleware(['auth', 'verified']);
-Route::singleton('profile', UserController::class)->only(['show', 'update'])->middleware(['auth', 'verified']);
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/profile/followers', [UserController::class, 'followers'])
+        ->name('profile.followers');
+    Route::get('/profile/following', [UserController::class, 'following'])
+        ->name('profile.following');
+    Route::post('/profile/following', [UserController::class, 'store_following'])
+        ->name('profile.following.store');
+    Route::singleton('profile', UserController::class)->only(['show', 'update']);
+
+    Route::get('/thinker/{user}/followers', [UserController::class, 'followers'])
+        ->name('thinker.followers');
+    Route::get('/thinker/{user}/following', [UserController::class, 'following'])
+        ->name('thinker.following');
+    Route::get('/thinker/{user}', [UserController::class, 'show'])->name('thinker.show');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/settings', [ProfileController::class, 'edit'])->name('settings.edit');
