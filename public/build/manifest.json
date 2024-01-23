@@ -10,8 +10,15 @@
     "imports": [
       "resources/js/app.tsx",
       "_ApplicationLogo.js",
-      "_transition.js",
+      "_Dropdown.js",
       "_NavLink.js"
+    ]
+  },
+  "_Dropdown.js": {
+    "file": "assets/Dropdown.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "_transition.js"
     ]
   },
   "_GuestLayout.js": {
@@ -55,7 +62,7 @@
     "file": "assets/ThoughtCard.js",
     "imports": [
       "resources/js/app.tsx",
-      "_AuthenticatedLayout.js",
+      "_Dropdown.js",
       "_InputError.js",
       "_PrimaryButton.js"
     ]
@@ -65,6 +72,262 @@
     "imports": [
       "resources/js/app.tsx"
     ]
+  },
+  "node_modules/@fontsource/righteous/files/righteous-latin-400-normal.woff": {
+    "file": "assets/righteous-latin-400-normal.woff",
+    "src": "node_modules/@fontsource/righteous/files/righteous-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/righteous/files/righteous-latin-400-normal.woff2": {
+    "file": "assets/righteous-latin-400-normal.woff2",
+    "src": "node_modules/@fontsource/righteous/files/righteous-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/righteous/files/righteous-latin-ext-400-normal.woff": {
+    "file": "assets/righteous-latin-ext-400-normal.woff",
+    "src": "node_modules/@fontsource/righteous/files/righteous-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/righteous/files/righteous-latin-ext-400-normal.woff2": {
+    "file": "assets/righteous-latin-ext-400-normal.woff2",
+    "src": "node_modules/@fontsource/righteous/files/righteous-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff": {
+    "file": "assets/roboto-cyrillic-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff2": {
+    "file": "assets/roboto-cyrillic-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff": {
+    "file": "assets/roboto-cyrillic-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff2": {
+    "file": "assets/roboto-cyrillic-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff": {
+    "file": "assets/roboto-cyrillic-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff2": {
+    "file": "assets/roboto-cyrillic-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff": {
+    "file": "assets/roboto-cyrillic-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff2": {
+    "file": "assets/roboto-cyrillic-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff": {
+    "file": "assets/roboto-cyrillic-ext-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff2": {
+    "file": "assets/roboto-cyrillic-ext-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-cyrillic-ext-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff": {
+    "file": "assets/roboto-greek-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff2": {
+    "file": "assets/roboto-greek-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff": {
+    "file": "assets/roboto-greek-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff2": {
+    "file": "assets/roboto-greek-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff": {
+    "file": "assets/roboto-greek-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff2": {
+    "file": "assets/roboto-greek-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff": {
+    "file": "assets/roboto-greek-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff2": {
+    "file": "assets/roboto-greek-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff": {
+    "file": "assets/roboto-greek-ext-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff2": {
+    "file": "assets/roboto-greek-ext-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff": {
+    "file": "assets/roboto-greek-ext-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff2": {
+    "file": "assets/roboto-greek-ext-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff": {
+    "file": "assets/roboto-greek-ext-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff2": {
+    "file": "assets/roboto-greek-ext-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff": {
+    "file": "assets/roboto-greek-ext-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff2": {
+    "file": "assets/roboto-greek-ext-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-greek-ext-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff": {
+    "file": "assets/roboto-latin-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff2": {
+    "file": "assets/roboto-latin-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff": {
+    "file": "assets/roboto-latin-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2": {
+    "file": "assets/roboto-latin-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff": {
+    "file": "assets/roboto-latin-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff2": {
+    "file": "assets/roboto-latin-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff": {
+    "file": "assets/roboto-latin-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2": {
+    "file": "assets/roboto-latin-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff": {
+    "file": "assets/roboto-latin-ext-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff2": {
+    "file": "assets/roboto-latin-ext-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff": {
+    "file": "assets/roboto-latin-ext-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff2": {
+    "file": "assets/roboto-latin-ext-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff": {
+    "file": "assets/roboto-latin-ext-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff2": {
+    "file": "assets/roboto-latin-ext-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff": {
+    "file": "assets/roboto-latin-ext-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff2": {
+    "file": "assets/roboto-latin-ext-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-latin-ext-700-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff": {
+    "file": "assets/roboto-vietnamese-300-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff2": {
+    "file": "assets/roboto-vietnamese-300-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-300-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff": {
+    "file": "assets/roboto-vietnamese-400-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff2": {
+    "file": "assets/roboto-vietnamese-400-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-400-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff": {
+    "file": "assets/roboto-vietnamese-500-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff2": {
+    "file": "assets/roboto-vietnamese-500-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-500-normal.woff2"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff": {
+    "file": "assets/roboto-vietnamese-700-normal.woff",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff"
+  },
+  "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2": {
+    "file": "assets/roboto-vietnamese-700-normal.woff2",
+    "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2"
+  },
+  "resources/images/LOGO.png": {
+    "assets": [
+      "assets/LOGO.png"
+    ],
+    "file": "assets/LOGO.js",
+    "isDynamicEntry": true,
+    "src": "resources/images/LOGO.png"
+  },
+  "resources/images/LOGO.svg": {
+    "assets": [
+      "assets/LOGO.svg"
+    ],
+    "file": "assets/LOGO2.js",
+    "isDynamicEntry": true,
+    "src": "resources/images/LOGO.svg"
   },
   "resources/js/Pages/Auth/ConfirmPassword.tsx": {
     "file": "assets/ConfirmPassword.js",
@@ -146,15 +409,27 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/VerifyEmail.tsx"
   },
+  "resources/js/Pages/Home.css": {
+    "file": "assets/Home.css",
+    "src": "resources/js/Pages/Home.css"
+  },
   "resources/js/Pages/Home.tsx": {
+    "assets": [
+      "assets/righteous-latin-ext-400-normal.woff2",
+      "assets/righteous-latin-ext-400-normal.woff",
+      "assets/righteous-latin-400-normal.woff2",
+      "assets/righteous-latin-400-normal.woff"
+    ],
+    "css": [
+      "assets/Home.css"
+    ],
     "file": "assets/Home.js",
     "imports": [
       "resources/js/app.tsx",
-      "_AuthenticatedLayout.js",
       "_ThoughtCard.js",
-      "_ApplicationLogo.js",
+      "resources/images/LOGO.svg",
+      "_Dropdown.js",
       "_transition.js",
-      "_NavLink.js",
       "_InputError.js",
       "_PrimaryButton.js"
     ],
@@ -167,10 +442,11 @@
       "resources/js/app.tsx",
       "_ThoughtCard.js",
       "_AuthenticatedLayout.js",
+      "_Dropdown.js",
+      "_transition.js",
       "_InputError.js",
       "_PrimaryButton.js",
       "_ApplicationLogo.js",
-      "_transition.js",
       "_NavLink.js"
     ],
     "isDynamicEntry": true,
@@ -187,6 +463,7 @@
       "_NavLink.js",
       "resources/js/Pages/Profile/Partials/FollowButton.tsx",
       "_ApplicationLogo.js",
+      "_Dropdown.js",
       "_transition.js"
     ],
     "isDynamicEntry": true,
@@ -203,6 +480,7 @@
       "_NavLink.js",
       "resources/js/Pages/Profile/Partials/FollowButton.tsx",
       "_ApplicationLogo.js",
+      "_Dropdown.js",
       "_transition.js"
     ],
     "isDynamicEntry": true,
@@ -215,10 +493,11 @@
       "_ThoughtCard.js",
       "_AuthenticatedLayout.js",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
+      "_Dropdown.js",
+      "_transition.js",
       "_InputError.js",
       "_PrimaryButton.js",
       "_ApplicationLogo.js",
-      "_transition.js",
       "_NavLink.js",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
       "resources/js/Pages/Profile/Partials/FollowButton.tsx"
@@ -272,6 +551,7 @@
       "resources/js/Pages/Settings/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Settings/Partials/UpdateProfileInformationForm.tsx",
       "_ApplicationLogo.js",
+      "_Dropdown.js",
       "_transition.js",
       "_NavLink.js",
       "_InputError.js",
@@ -328,8 +608,9 @@
       "_AuthenticatedLayout.js",
       "_PrimaryButton.js",
       "_InputError.js",
-      "_ApplicationLogo.js",
+      "_Dropdown.js",
       "_transition.js",
+      "_ApplicationLogo.js",
       "_NavLink.js"
     ],
     "isDynamicEntry": true,
@@ -340,11 +621,12 @@
     "imports": [
       "resources/js/app.tsx",
       "_InputError.js",
-      "_AuthenticatedLayout.js",
+      "_Dropdown.js",
       "_ThoughtCard.js",
       "_PrimaryButton.js",
-      "_ApplicationLogo.js",
+      "_AuthenticatedLayout.js",
       "_transition.js",
+      "_ApplicationLogo.js",
       "_NavLink.js"
     ],
     "isDynamicEntry": true,
@@ -363,10 +645,70 @@
     "src": "resources/js/app.css"
   },
   "resources/js/app.tsx": {
+    "assets": [
+      "assets/roboto-cyrillic-ext-300-normal.woff2",
+      "assets/roboto-cyrillic-ext-300-normal.woff",
+      "assets/roboto-cyrillic-300-normal.woff2",
+      "assets/roboto-cyrillic-300-normal.woff",
+      "assets/roboto-greek-ext-300-normal.woff2",
+      "assets/roboto-greek-ext-300-normal.woff",
+      "assets/roboto-greek-300-normal.woff2",
+      "assets/roboto-greek-300-normal.woff",
+      "assets/roboto-vietnamese-300-normal.woff2",
+      "assets/roboto-vietnamese-300-normal.woff",
+      "assets/roboto-latin-ext-300-normal.woff2",
+      "assets/roboto-latin-ext-300-normal.woff",
+      "assets/roboto-latin-300-normal.woff2",
+      "assets/roboto-latin-300-normal.woff",
+      "assets/roboto-cyrillic-ext-400-normal.woff2",
+      "assets/roboto-cyrillic-ext-400-normal.woff",
+      "assets/roboto-cyrillic-400-normal.woff2",
+      "assets/roboto-cyrillic-400-normal.woff",
+      "assets/roboto-greek-ext-400-normal.woff2",
+      "assets/roboto-greek-ext-400-normal.woff",
+      "assets/roboto-greek-400-normal.woff2",
+      "assets/roboto-greek-400-normal.woff",
+      "assets/roboto-vietnamese-400-normal.woff2",
+      "assets/roboto-vietnamese-400-normal.woff",
+      "assets/roboto-latin-ext-400-normal.woff2",
+      "assets/roboto-latin-ext-400-normal.woff",
+      "assets/roboto-latin-400-normal.woff2",
+      "assets/roboto-latin-400-normal.woff",
+      "assets/roboto-cyrillic-ext-500-normal.woff2",
+      "assets/roboto-cyrillic-ext-500-normal.woff",
+      "assets/roboto-cyrillic-500-normal.woff2",
+      "assets/roboto-cyrillic-500-normal.woff",
+      "assets/roboto-greek-ext-500-normal.woff2",
+      "assets/roboto-greek-ext-500-normal.woff",
+      "assets/roboto-greek-500-normal.woff2",
+      "assets/roboto-greek-500-normal.woff",
+      "assets/roboto-vietnamese-500-normal.woff2",
+      "assets/roboto-vietnamese-500-normal.woff",
+      "assets/roboto-latin-ext-500-normal.woff2",
+      "assets/roboto-latin-ext-500-normal.woff",
+      "assets/roboto-latin-500-normal.woff2",
+      "assets/roboto-latin-500-normal.woff",
+      "assets/roboto-cyrillic-ext-700-normal.woff2",
+      "assets/roboto-cyrillic-ext-700-normal.woff",
+      "assets/roboto-cyrillic-700-normal.woff2",
+      "assets/roboto-cyrillic-700-normal.woff",
+      "assets/roboto-greek-ext-700-normal.woff2",
+      "assets/roboto-greek-ext-700-normal.woff",
+      "assets/roboto-greek-700-normal.woff2",
+      "assets/roboto-greek-700-normal.woff",
+      "assets/roboto-vietnamese-700-normal.woff2",
+      "assets/roboto-vietnamese-700-normal.woff",
+      "assets/roboto-latin-ext-700-normal.woff2",
+      "assets/roboto-latin-ext-700-normal.woff",
+      "assets/roboto-latin-700-normal.woff2",
+      "assets/roboto-latin-700-normal.woff"
+    ],
     "css": [
       "assets/app.css"
     ],
     "dynamicImports": [
+      "resources/images/LOGO.png",
+      "resources/images/LOGO.svg",
       "resources/js/Pages/Auth/ConfirmPassword.tsx",
       "resources/js/Pages/Auth/ForgotPassword.tsx",
       "resources/js/Pages/Auth/Login.tsx",
