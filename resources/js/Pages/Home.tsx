@@ -19,19 +19,21 @@ export default function Home({
         //     }
         //     title="Home"
         // >
-        <div className="text-white">
-            <div className="shadow-sm rounded-lg divide-y bg-[#164863]">
-                {thoughts.map((thought) => (
-                    <div
-                        className="hover:bg-slate-700 hover:rounded-lg"
-                        key={thought.id}
-                    >
-                        <ThoughtComponent
-                            thought={thought}
-                            // auth={auth}
-                        />
-                    </div>
-                ))}
+        <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+            <div className="text-white">
+                <div className="shadow-sm rounded-lg divide-y bg-[#164863]">
+                    {thoughts.map((thought) => (
+                        <div
+                            className="hover:bg-slate-700 hover:rounded-lg"
+                            key={thought.id}
+                        >
+                            <ThoughtComponent
+                                thought={thought}
+                                // auth={auth}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
         // {/* </AuthenticatedLayout> */}

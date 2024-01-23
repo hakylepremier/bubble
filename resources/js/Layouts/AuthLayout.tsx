@@ -34,7 +34,12 @@ const AuthLayout = ({
             </Head>
             <Box>
                 <Container sx={{ bgcolor: "#ccc" }} maxWidth="lg">
-                    <Stack direction="row" spacing={2} alignItems={"start"}>
+                    <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems={"start"}
+                        justifyContent={"space-between"}
+                    >
                         {/* <Stack
                             direction="column"
                             justifyContent={"space-between"}

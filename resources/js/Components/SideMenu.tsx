@@ -10,7 +10,7 @@ const SideMenu = () => {
             alignItems={"flex-start"}
             spacing={"1rem"}
             sx={{
-                flexBasis: "30rem",
+                flexBasis: "15rem",
                 // flex: 1,
             }}
         >
