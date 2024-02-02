@@ -3,6 +3,7 @@ import ProfileLayout from "./layout/ProfileLayout";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { User } from "@/types";
 import ThinkerCard from "./Partials/ThinkerCard";
+import AuthLayout from "@/Layouts/AuthLayout";
 
 const Following = ({ following }: PropsWithChildren<{ following: User[] }>) => {
     return (
@@ -34,21 +35,13 @@ Following.layout = (page: any) => {
     const follow: Boolean = props.follow;
     const followed_by: Boolean = props.followed_by;
     return (
-        <Authenticated
-            // user={usePage().props.auth.user as unknown as PageProps}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    Profile
-                </h2>
-            }
-            title="Following"
-        >
+        <AuthLayout title="Following">
             <ProfileLayout
                 follow={follow}
                 followed_by={followed_by}
                 user={user}
                 children={page}
             />
-        </Authenticated>
+        </AuthLayout>
     );
 };

@@ -20,7 +20,8 @@ const NavItem = ({
                 sx={{
                     border: 1,
                     borderRadius: "2rem",
-                    ":hover": { bgcolor: "GrayText" },
+                    ":hover": { bgcolor: "#546492", color: "#e7eef0" },
+                    color: active ? "white" : "black",
                     // bgcolor: active ? "primary" : "transparent",
                     bgcolor: active ? "primary.main" : "transparent",
                 }}
@@ -28,7 +29,14 @@ const NavItem = ({
                 <Stack direction="row" spacing={2}>
                     {icon && <>{icon}</>}
                     {/* <EmojiObjectsIcon sx={{ mr: "0.5rem" }} /> */}
-                    <Typography variant="body1" color="initial">
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: "inherit",
+                            // color: active ? "white" : "black",
+                            // ":hover": { color: "inherit" },
+                        }}
+                    >
                         {title}
                     </Typography>
                 </Stack>

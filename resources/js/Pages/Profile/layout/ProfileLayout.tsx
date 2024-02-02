@@ -9,6 +9,7 @@ import { Link, useForm, usePage } from "@inertiajs/react";
 import ProfileLogo from "../Partials/ProfileLogo";
 import NavLink from "@/Components/NavLink";
 import FollowButton from "../Partials/FollowButton";
+import AuthLayout from "@/Layouts/AuthLayout";
 
 const ProfileLayout = ({
     follow = false,
@@ -141,6 +142,10 @@ const ProfileLayout = ({
 };
 
 export default ProfileLayout;
+
+// ProfileLayout.layout = (page: any) => (
+//     <AuthLayout title="Likes">{page}</AuthLayout>
+// );
 
 // ProfileLayout.layout = (page: ReactNode) => (
 //     <Authenticated

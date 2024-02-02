@@ -7,7 +7,7 @@ import { Link, usePage } from "@inertiajs/react";
 const ThinkerCard = ({ user }: PropsWithChildren<{ user: User }>) => {
     const { auth } = usePage().props as unknown as PageProps;
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center max-w-2xl">
             <div className="flex gap-2 items-center">
                 <div className="h-12 w-12 p-3 bg-gray-700 rounded-full ">
                     <ProfileLogo />

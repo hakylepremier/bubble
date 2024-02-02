@@ -9,6 +9,7 @@ import { Link, useForm, usePage } from "@inertiajs/react";
 import ProfileLogo from "./Partials/ProfileLogo";
 import NavLink from "@/Components/NavLink";
 import ProfileLayout from "./layout/ProfileLayout";
+import AuthLayout from "@/Layouts/AuthLayout";
 
 const Index = ({
     thoughts,
@@ -63,23 +64,28 @@ Index.layout = (page: any) => {
     // const user = props.user;
     return (
         // <div className="bg-gray-700">{page}</div>
-        <Authenticated
-            // user={usePage().props.auth.user as unknown as PageProps}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    My Profile
-                </h2>
-            }
-            title="Profile"
-            // children={page}
-        >
-            {/* {page} */}
+        // <Authenticated
+        //     // user={usePage().props.auth.user as unknown as PageProps}
+        //     header={
+        //         <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        //             My Profile
+        //         </h2>
+        //     }
+        //     title="Profile"
+        //     // children={page}
+        // >
+        <AuthLayout title="Profile">
             <ProfileLayout
                 follow={follow}
                 followed_by={followed_by}
                 user={user}
                 children={page}
             />
-        </Authenticated>
+        </AuthLayout>
+        // </Authenticated>
     );
 };
+
+// ThoughtPage.layout = (page: any) => (
+//     <AuthLayout title="Likes">{page}</AuthLayout>
+// );

@@ -32,8 +32,8 @@ const AuthLayout = ({
             <Head>
                 <title>{title}</title>
             </Head>
-            <Box>
-                <Container sx={{ bgcolor: "#ccc" }} maxWidth="lg">
+            <Box sx={{ bgcolor: "background.default" }}>
+                <Container sx={{}} maxWidth="lg">
                     <Stack
                         direction="row"
                         spacing={2}

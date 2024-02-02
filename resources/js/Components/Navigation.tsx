@@ -30,25 +30,56 @@ const Navigation = () => {
                         href={route("home")}
                         active={route().current("home")}
                         title="home"
-                        icon={<HomeIcon fontSize="small" />}
+                        icon={
+                            <HomeIcon
+                                fontSize="small"
+                                sx={{
+                                    color: "inherit",
+                                }}
+                            />
+                        }
                     />
                     <NavItem
                         href={route("thoughts.index")}
                         active={route().current("thoughts.index")}
                         title="thoughts"
-                        icon={<EmojiObjectsIcon fontSize="small" />}
+                        icon={
+                            <EmojiObjectsIcon
+                                fontSize="small"
+                                sx={{
+                                    color: "inherit",
+                                }}
+                            />
+                        }
                     />
                     <NavItem
                         href={route("likes.index")}
                         active={route().current("likes.index")}
                         title="likes"
-                        icon={<FavoriteIcon fontSize="small" />}
+                        icon={
+                            <FavoriteIcon
+                                fontSize="small"
+                                sx={{
+                                    color: "inherit",
+                                }}
+                            />
+                        }
                     />
                     <NavItem
                         href={route("profile.show")}
                         active={route().current("profile.show")}
                         title="profile"
-                        icon={<Person2Icon fontSize="small" />}
+                        icon={
+                            <Person2Icon
+                                fontSize="small"
+                                sx={{
+                                    // color: route().current("profile.show")
+                                    //     ? "white"
+                                    //     : "black",
+                                    color: "inherit",
+                                }}
+                            />
+                        }
                     />
                 </Stack>
             </Box>
