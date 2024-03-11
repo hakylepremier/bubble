@@ -14,9 +14,9 @@ import {
     Stack,
     Typography,
 } from "@mui/material";
-import React, { PropsWithChildren, ReactNode } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import NavItem from "@/Components/NavItem";
-import { PageProps } from "@/types";
+import type { PageProps } from "@/types";
 import SecondaryNavItem from "@/Components/SecondaryNavItem";
 import Navigation from "@/Components/Navigation";
 import SideMenu from "@/Components/SideMenu";
@@ -79,7 +79,7 @@ const AuthLayout = ({
                             <SecondaryNavItem name={user.name} />
                         </Stack> */}
                         <Navigation />
-                        <Box>{children}</Box>
+                        <Box sx={{ flexBasis: "500px" }}>{children}</Box>
                         <SideMenu />
                     </Stack>
                 </Container>

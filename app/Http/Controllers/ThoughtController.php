@@ -17,7 +17,7 @@ class ThoughtController extends Controller
      */
     public function index()
     {
-        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user', 'likes')->latest()->get();
+        $thoughts = Thought::where('user_id', '=', auth()->id())->with('user', 'likes')->withCount('likes')->latest()->get();
         // foreach ($thoughts as $thought) {
         //     $like = $thought->likes();
         // }

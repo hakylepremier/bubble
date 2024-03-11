@@ -1,14 +1,17 @@
-import { PageProps, Thought } from "@/types";
+import type { PageProps, Thought } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { type PropsWithChildren, useEffect, useState } from "react";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Paper, Typography } from "@mui/material";
 
 const LikeButton = ({ thought }: PropsWithChildren<{ thought: Thought }>) => {
     const { auth } = usePage().props as unknown as PageProps;
     const [liked, setLiked] = useState(false);
     useEffect(() => {
-        let length = thought.likes.length;
+        // let length = thought.likes.length;
         thought.likes.length === 0 && setLiked(true);
-    }, []);
+    }, [thought.likes.length]);
     return (
         <div className="text-blue-800">
             {thought.likes[0] ? (
@@ -19,23 +22,38 @@ const LikeButton = ({ thought }: PropsWithChildren<{ thought: Thought }>) => {
                     onSuccess={() => setLiked(true)}
                     preserveScroll
                     type="button"
-                    className={
-                        "px-4 py-2 text-start text-sm leading-5  text-gray-300 dark:text-gray-800  hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none  transition duration-150 ease-in-out "
-                    }
+                    // className={
+                    //     "px-4 py-2 text-start text-sm leading-5  text-gray-300 dark:text-gray-800  hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none  transition duration-150 ease-in-out "
+                    // }
                 >
-                    <svg
-                        className={"h-6 w-6  -scale-x-100"}
-                        viewBox="0 0 24 24"
-                        stroke="#1f2937"
-                        strokeWidth="0.125rem"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <Paper
+                        elevation={0}
+                        sx={{
+                            py: "0.25rem",
+                            px: "0.5rem",
+                            bgcolor: "white",
+                            borderRadius: "10rem",
+                            display: "flex",
+                            gap: "0.5rem",
+                            alignItems: "center",
+                            color: "red",
+                            ":hover": {
+                                color: "blue",
+                                boxShadow:
+                                    "0px 0px 8px 4px rgba(90, 171, 252, 0.3)",
+                            },
+                        }}
                     >
-                        <path
-                            d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"
-                            fill="currentColor"
+                        <FavoriteIcon
+                            sx={{ color: "inherit", fontSize: "1rem" }}
                         />
-                    </svg>
+                        <Typography
+                            variant="body1"
+                            sx={{ fontSize: "10px", color: "black" }}
+                        >
+                            {thought.likes_count ? thought.likes_count : 0}
+                        </Typography>
+                    </Paper>
                 </Link>
             ) : (
                 <Link
@@ -49,23 +67,41 @@ const LikeButton = ({ thought }: PropsWithChildren<{ thought: Thought }>) => {
                     onSuccess={() => setLiked(true)}
                     preserveScroll
                     type="button"
-                    className={
-                        "px-4 py-2 text-start text-sm leading-5 dark:text-transparent text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none transition duration-150 ease-in-out "
-                    }
+                    // className={
+                    //     "px-4 py-2 text-start text-sm leading-5 dark:text-transparent text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none transition duration-150 ease-in-out "
+                    // }
                 >
-                    <svg
-                        className={"h-6 w-6  -scale-x-100"}
-                        viewBox="0 0 24 24"
-                        stroke="#1f2937"
-                        strokeWidth="0.125rem"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <Paper
+                        elevation={0}
+                        sx={{
+                            py: "0.25rem",
+                            px: "0.5rem",
+                            bgcolor: "white",
+                            borderRadius: "10rem",
+                            display: "flex",
+                            gap: "0.5rem",
+                            alignItems: "center",
+                            color: "red",
+                            ":hover": {
+                                color: "blue",
+                                boxShadow:
+                                    "0px 0px 8px 4px rgba(90, 171, 252, 0.3)",
+                            },
+                        }}
                     >
-                        <path
-                            d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"
-                            fill="currentColor"
+                        <FavoriteBorderOutlinedIcon
+                            sx={{
+                                color: "inherit",
+                                fontSize: "1rem",
+                            }}
                         />
-                    </svg>
+                        <Typography
+                            variant="body1"
+                            sx={{ fontSize: "10px", color: "black" }}
+                        >
+                            {thought.likes_count ? thought.likes_count : 0}
+                        </Typography>
+                    </Paper>
                 </Link>
             )}
         </div>

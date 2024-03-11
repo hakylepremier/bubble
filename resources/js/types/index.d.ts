@@ -35,6 +35,7 @@ export interface Thought {
     updated_at: Date;
     user: User;
     likes: Like[];
+    likes_count?: number;
 }
 
 export interface ThoughtInsight extends Thought {

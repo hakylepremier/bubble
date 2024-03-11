@@ -1,5 +1,5 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { PageProps, Thought } from "@/types";
+import type { PageProps, Thought } from "@/types";
 import ThoughtComponent from "@/Components/ThoughtCard";
 import Test from "@/Components/Test";
 import { Link } from "@inertiajs/react";
@@ -19,12 +19,12 @@ export default function Home({
         //     }
         //     title="Home"
         // >
-        <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div className="p-4 sm:p-6 lg:p-8">
             <div className="text-white">
-                <div className="shadow-sm rounded-lg divide-y bg-[#164863]">
+                <div className="rounded-lg ">
                     {thoughts.map((thought) => (
                         <div
-                            className="hover:bg-slate-700 hover:rounded-lg"
+                            // className="hover:bg-slate-700 hover:rounded-lg"
                             key={thought.id}
                         >
                             <ThoughtComponent
@@ -40,4 +40,5 @@ export default function Home({
     );
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 Home.layout = (page: any) => <AuthLayout title="Home">{page}</AuthLayout>;

@@ -50,7 +50,7 @@ Route::get('/home', function () {
         $q->where('user_id', '=', auth()->id());
     }, 'user.followers' => function (Builder $q) {
         $q->where('follower_user_id', '=', auth()->id());
-    }])->latest()->get();
+    }])->withCount('likes')->latest()->get();
     foreach ($thoughts as $thought) {
         $like = $thought->likes();
     }
