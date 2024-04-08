@@ -1,31 +1,30 @@
 {
-  "_ApplicationLogo.js": {
-    "file": "assets/ApplicationLogo.js",
-    "imports": [
-      "resources/js/app.tsx"
-    ]
+  "AuthLayout.css": {
+    "file": "assets/AuthLayout.css",
+    "src": "AuthLayout.css"
   },
-  "_AuthenticatedLayout.js": {
-    "file": "assets/AuthenticatedLayout.js",
+  "_AuthLayout.js": {
+    "assets": [
+      "assets/righteous-latin-ext-400-normal.woff2",
+      "assets/righteous-latin-ext-400-normal.woff",
+      "assets/righteous-latin-400-normal.woff2",
+      "assets/righteous-latin-400-normal.woff"
+    ],
+    "css": [
+      "assets/AuthLayout.css"
+    ],
+    "file": "assets/AuthLayout.js",
     "imports": [
       "resources/js/app.tsx",
-      "_ApplicationLogo.js",
-      "_Dropdown.js",
-      "_NavLink.js"
-    ]
-  },
-  "_Dropdown.js": {
-    "file": "assets/Dropdown.js",
-    "imports": [
-      "resources/js/app.tsx",
-      "_transition.js"
+      "resources/images/LOGO.svg",
+      "_Stack.js"
     ]
   },
   "_GuestLayout.js": {
     "file": "assets/GuestLayout.js",
     "imports": [
       "resources/js/app.tsx",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ]
   },
   "_InputError.js": {
@@ -52,6 +51,12 @@
       "resources/js/app.tsx"
     ]
   },
+  "_Stack.js": {
+    "file": "assets/Stack.js",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
   "_TextInput.js": {
     "file": "assets/TextInput.js",
     "imports": [
@@ -62,9 +67,7 @@
     "file": "assets/ThoughtCard.js",
     "imports": [
       "resources/js/app.tsx",
-      "_Dropdown.js",
-      "_InputError.js",
-      "_PrimaryButton.js"
+      "_Stack.js"
     ]
   },
   "_transition.js": {
@@ -329,6 +332,14 @@
     "isDynamicEntry": true,
     "src": "resources/images/LOGO.svg"
   },
+  "resources/images/bg-image.webp": {
+    "assets": [
+      "assets/bg-image.webp"
+    ],
+    "file": "assets/bg-image.js",
+    "isDynamicEntry": true,
+    "src": "resources/images/bg-image.webp"
+  },
   "resources/js/Pages/Auth/ConfirmPassword.tsx": {
     "file": "assets/ConfirmPassword.js",
     "imports": [
@@ -338,7 +349,7 @@
       "_InputLabel.js",
       "_PrimaryButton.js",
       "_TextInput.js",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ConfirmPassword.tsx"
@@ -351,7 +362,7 @@
       "_InputError.js",
       "_PrimaryButton.js",
       "_TextInput.js",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ForgotPassword.tsx"
@@ -365,7 +376,7 @@
       "_InputLabel.js",
       "_PrimaryButton.js",
       "_TextInput.js",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/Login.tsx"
@@ -379,7 +390,7 @@
       "_InputLabel.js",
       "_PrimaryButton.js",
       "_TextInput.js",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/Register.tsx"
@@ -393,7 +404,7 @@
       "_InputLabel.js",
       "_PrimaryButton.js",
       "_TextInput.js",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ResetPassword.tsx"
@@ -404,34 +415,28 @@
       "resources/js/app.tsx",
       "_GuestLayout.js",
       "_PrimaryButton.js",
-      "_ApplicationLogo.js"
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/VerifyEmail.tsx"
   },
-  "resources/js/Pages/Home.css": {
-    "file": "assets/Home.css",
-    "src": "resources/js/Pages/Home.css"
+  "resources/js/Pages/Default.tsx": {
+    "file": "assets/Default.js",
+    "imports": [
+      "resources/js/app.tsx",
+      "resources/images/bg-image.webp"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Default.tsx"
   },
   "resources/js/Pages/Home.tsx": {
-    "assets": [
-      "assets/righteous-latin-ext-400-normal.woff2",
-      "assets/righteous-latin-ext-400-normal.woff",
-      "assets/righteous-latin-400-normal.woff2",
-      "assets/righteous-latin-400-normal.woff"
-    ],
-    "css": [
-      "assets/Home.css"
-    ],
     "file": "assets/Home.js",
     "imports": [
       "resources/js/app.tsx",
       "_ThoughtCard.js",
-      "resources/images/LOGO.svg",
-      "_Dropdown.js",
-      "_transition.js",
-      "_InputError.js",
-      "_PrimaryButton.js"
+      "_AuthLayout.js",
+      "_Stack.js",
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Home.tsx"
@@ -441,13 +446,9 @@
     "imports": [
       "resources/js/app.tsx",
       "_ThoughtCard.js",
-      "_AuthenticatedLayout.js",
-      "_Dropdown.js",
-      "_transition.js",
-      "_InputError.js",
-      "_PrimaryButton.js",
-      "_ApplicationLogo.js",
-      "_NavLink.js"
+      "_AuthLayout.js",
+      "_Stack.js",
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/LikePage.tsx"
@@ -457,14 +458,13 @@
     "imports": [
       "resources/js/app.tsx",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
-      "_AuthenticatedLayout.js",
       "resources/js/Pages/Profile/Partials/ThinkerCard.tsx",
+      "_AuthLayout.js",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
       "_NavLink.js",
       "resources/js/Pages/Profile/Partials/FollowButton.tsx",
-      "_ApplicationLogo.js",
-      "_Dropdown.js",
-      "_transition.js"
+      "resources/images/LOGO.svg",
+      "_Stack.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Followers.tsx"
@@ -474,14 +474,13 @@
     "imports": [
       "resources/js/app.tsx",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
-      "_AuthenticatedLayout.js",
       "resources/js/Pages/Profile/Partials/ThinkerCard.tsx",
+      "_AuthLayout.js",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
       "_NavLink.js",
       "resources/js/Pages/Profile/Partials/FollowButton.tsx",
-      "_ApplicationLogo.js",
-      "_Dropdown.js",
-      "_transition.js"
+      "resources/images/LOGO.svg",
+      "_Stack.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Following.tsx"
@@ -491,16 +490,13 @@
     "imports": [
       "resources/js/app.tsx",
       "_ThoughtCard.js",
-      "_AuthenticatedLayout.js",
       "resources/js/Pages/Profile/layout/ProfileLayout.tsx",
-      "_Dropdown.js",
-      "_transition.js",
-      "_InputError.js",
-      "_PrimaryButton.js",
-      "_ApplicationLogo.js",
-      "_NavLink.js",
+      "_AuthLayout.js",
+      "_Stack.js",
       "resources/js/Pages/Profile/Partials/ProfileLogo.tsx",
-      "resources/js/Pages/Profile/Partials/FollowButton.tsx"
+      "_NavLink.js",
+      "resources/js/Pages/Profile/Partials/FollowButton.tsx",
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Index.tsx"
@@ -546,18 +542,17 @@
     "file": "assets/Edit.js",
     "imports": [
       "resources/js/app.tsx",
-      "_AuthenticatedLayout.js",
       "resources/js/Pages/Settings/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Settings/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Settings/Partials/UpdateProfileInformationForm.tsx",
-      "_ApplicationLogo.js",
-      "_Dropdown.js",
-      "_transition.js",
-      "_NavLink.js",
+      "_AuthLayout.js",
       "_InputError.js",
       "_InputLabel.js",
+      "_transition.js",
       "_TextInput.js",
-      "_PrimaryButton.js"
+      "_PrimaryButton.js",
+      "resources/images/LOGO.svg",
+      "_Stack.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Settings/Edit.tsx"
@@ -605,13 +600,11 @@
     "imports": [
       "resources/js/app.tsx",
       "_ThoughtCard.js",
-      "_AuthenticatedLayout.js",
       "_PrimaryButton.js",
       "_InputError.js",
-      "_Dropdown.js",
-      "_transition.js",
-      "_ApplicationLogo.js",
-      "_NavLink.js"
+      "_AuthLayout.js",
+      "_Stack.js",
+      "resources/images/LOGO.svg"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Thoughts/Index.tsx"
@@ -621,13 +614,11 @@
     "imports": [
       "resources/js/app.tsx",
       "_InputError.js",
-      "_Dropdown.js",
+      "_transition.js",
       "_ThoughtCard.js",
       "_PrimaryButton.js",
-      "_AuthenticatedLayout.js",
-      "_transition.js",
-      "_ApplicationLogo.js",
-      "_NavLink.js"
+      "_NavLink.js",
+      "_Stack.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Thoughts/ThoughtPage.tsx"
@@ -709,12 +700,14 @@
     "dynamicImports": [
       "resources/images/LOGO.png",
       "resources/images/LOGO.svg",
+      "resources/images/bg-image.webp",
       "resources/js/Pages/Auth/ConfirmPassword.tsx",
       "resources/js/Pages/Auth/ForgotPassword.tsx",
       "resources/js/Pages/Auth/Login.tsx",
       "resources/js/Pages/Auth/Register.tsx",
       "resources/js/Pages/Auth/ResetPassword.tsx",
       "resources/js/Pages/Auth/VerifyEmail.tsx",
+      "resources/js/Pages/Default.tsx",
       "resources/js/Pages/Home.tsx",
       "resources/js/Pages/LikePage.tsx",
       "resources/js/Pages/Profile/Followers.tsx",
