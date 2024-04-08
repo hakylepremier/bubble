@@ -1,10 +1,10 @@
-import { useState, PropsWithChildren, ReactNode } from "react";
+import { useState, type PropsWithChildren, type ReactNode } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Head, Link, usePage } from "@inertiajs/react";
-import { PageProps, User } from "@/types";
+import { type PageProps, User } from "@/types";
 
 export default function Authenticated({
     header,
@@ -72,6 +72,7 @@ export default function Authenticated({
                                             >
                                                 {user.name}
 
+                                                {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
                                                 <svg
                                                     className="ms-2 -me-0.5 h-4 w-4"
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -108,6 +109,7 @@ export default function Authenticated({
 
                         <div className="-me-2 flex items-center sm:hidden">
                             <button
+                                type="button"
                                 onClick={() =>
                                     setShowingNavigationDropdown(
                                         (previousState) => !previousState
@@ -115,6 +117,7 @@ export default function Authenticated({
                                 }
                                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
                             >
+                                {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
                                 <svg
                                     className="h-6 w-6"
                                     stroke="currentColor"
@@ -150,10 +153,9 @@ export default function Authenticated({
                 </div>
 
                 <div
-                    className={
-                        (showingNavigationDropdown ? "block" : "hidden") +
-                        " sm:hidden"
-                    }
+                    className={`${
+                        showingNavigationDropdown ? "block" : "hidden"
+                    } sm:hidden`}
                 >
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink

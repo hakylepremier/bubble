@@ -24,13 +24,22 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Default', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+// Route::get('/default', function () {
+//     return Inertia::render('Default', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::resource('thoughts', ThoughtController::class)
     ->only(['index', 'show', 'store', 'update', 'destroy'])
@@ -60,7 +69,7 @@ Route::get('/home', function () {
 })->middleware(['auth', 'verified'])->name('home');
 
 
-Route::middleware('auth', 'verified')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile/followers', [UserController::class, 'followers'])
         ->name('profile.followers');
     Route::get('/profile/following', [UserController::class, 'following'])

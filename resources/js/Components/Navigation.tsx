@@ -8,7 +8,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Person2Icon from "@mui/icons-material/Person2";
 import SecondaryNavItem from "./SecondaryNavItem";
 import { usePage } from "@inertiajs/react";
-import { PageProps } from "@/types";
+import type { PageProps } from "@/types";
 
 const Navigation = () => {
     const { auth } = usePage().props as unknown as PageProps;

@@ -7,7 +7,7 @@ const Logo = () => {
     return (
         <Stack direction={"row"} alignItems={"center"} spacing={2}>
             <Box sx={{ width: "2.5rem", height: "2.5rem" }}>
-                <img src={LOGO} className="h-full w-full" />
+                <img src={LOGO} alt="Logo" className="h-full w-full" />
             </Box>
             <Typography
                 variant="h2"
